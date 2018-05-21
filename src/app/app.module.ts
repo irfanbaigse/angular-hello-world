@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { CoursesService } from './courses.service';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    CoursesService // creates a single instance of courses service
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
