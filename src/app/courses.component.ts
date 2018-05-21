@@ -22,7 +22,7 @@ import { Component } from "@angular/core";
     // `
 
     template: `
-        <input #email (keyup.enter)="onKeyUp(email.value)"/>
+        <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
     `
     // calling http logic endpoint
     // * it will make harder to test
@@ -30,6 +30,7 @@ import { Component } from "@angular/core";
     // To over come we create service
 })
 export class CoursesComponent {
+    email = 'abc@g.com';
     title = "List of courses";
     courses;
     imageUrl = "http://lorempixel.com/400/200"
@@ -41,7 +42,7 @@ export class CoursesComponent {
         console.log('button clicked');
     }
 
-    onKeyUp(email) {
-        console.log(email);
+    onKeyUp() {
+        console.log(this.email);
     }
 }
