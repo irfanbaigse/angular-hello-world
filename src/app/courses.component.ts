@@ -3,13 +3,18 @@ import { Component } from "@angular/core";
 
 @Component({
     selector:'courses', // <courses>
+    // template: `
+    //     <h2>Courses</h2>
+    //     <ul>
+    //         <li *ngFor="let course of courses">
+    //             {{ course }}
+    //         </li>
+    //     </ul>
+    // `
     template: `
-        <h2>Courses</h2>
-        <ul>
-            <li *ngFor="let course of courses">
-                {{ course }}
-            </li>
-        </ul>
+        <h2>{{ title }}</h2>
+        <h2 [textContent]="title"></h2>
+        <img [src]="imageUrl" />
     `
     // calling http logic endpoint
     // * it will make harder to test
@@ -19,9 +24,9 @@ import { Component } from "@angular/core";
 export class CoursesComponent {
     title = "List of courses";
     courses;
+    imageUrl = "http://lorempixel.com/400/200"
 
-    constructor() {
-        let service = new CoursesService();
+    constructor(service: CoursesService) {
         this.courses = service.getCourses();
     }
 }
