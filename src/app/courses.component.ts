@@ -18,7 +18,7 @@ import { Component } from "@angular/core";
     // `
 
     template: `
-        <button class="btn btn-primary">Submit</button>
+        <button class="btn btn-primary" (click)="onSave($event)">Submit</button>
     `
     // calling http logic endpoint
     // * it will make harder to test
@@ -32,5 +32,8 @@ export class CoursesComponent {
 
     constructor(service: CoursesService) {
         this.courses = service.getCourses();
+    }
+    onSave($event) {
+        console.log('button clicked');
     }
 }
