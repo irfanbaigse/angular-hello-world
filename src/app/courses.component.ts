@@ -11,10 +11,14 @@ import { Component } from "@angular/core";
     //         </li>
     //     </ul>
     // `
+    // template: `
+    //     <h2>{{ title }}</h2>
+    //     <h2 [textContent]="title"></h2>
+    //     <img [src]="imageUrl" />
+    // `
+
     template: `
-        <h2>{{ title }}</h2>
-        <h2 [textContent]="title"></h2>
-        <img [src]="imageUrl" />
+        <button class="btn btn-primary">Submit</button>
     `
     // calling http logic endpoint
     // * it will make harder to test
