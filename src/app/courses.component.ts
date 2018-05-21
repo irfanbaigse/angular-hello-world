@@ -17,8 +17,12 @@ import { Component } from "@angular/core";
     //     <img [src]="imageUrl" />
     // `
 
+    // template: `
+    //     <button class="btn btn-primary" (click)="onSave($event)">Submit</button>
+    // `
+
     template: `
-        <button class="btn btn-primary" (click)="onSave($event)">Submit</button>
+        <input #email (keyup.enter)="onKeyUp(email.value)"/>
     `
     // calling http logic endpoint
     // * it will make harder to test
@@ -35,5 +39,9 @@ export class CoursesComponent {
     }
     onSave($event) {
         console.log('button clicked');
+    }
+
+    onKeyUp(email) {
+        console.log(email);
     }
 }
